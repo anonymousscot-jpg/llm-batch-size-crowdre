@@ -2,7 +2,8 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 
-BASE_DIR = Path('/Users/SONY/Documents/College/Study_pdeu/Sem_8/Expriment/Batch')
+BASE_DIR = Path(__file__).resolve().parents[2]
+RESULTS_DIR = BASE_DIR / 'results'
 
 MODEL_DIRS = {
     'DeepSeek': ['DeepSeek', 'deepseek-v3.2-cloud-batch'],
@@ -28,7 +29,7 @@ def load_data():
     results = []
     for model_name, path_parts in MODEL_DIRS.items():
         display_name = DISPLAY_NAME_MAP.get(model_name, model_name)
-        model_path = BASE_DIR / path_parts[0] / path_parts[1]
+        model_path = RESULTS_DIR / path_parts[1]
         if not model_path.exists():
             continue
         
@@ -136,7 +137,9 @@ def analyze_all_batches():
         caption="Comprehensive analysis of all models across all batch sizes for Quaternary and Quinary tasks. Configurations are ranked by their composite 3D Efficiency Score. Only a fraction of configurations survive strict Pareto dominance.",
         label="tab:global_efficiency_all_models"
     )
-    with open('Global_Pareto_All_Batches.tex', 'w') as f:
+    out_tex_dir = BASE_DIR / 'analysis_output'
+    out_tex_dir.mkdir(exist_ok=True)
+    with open(out_tex_dir / 'Global_Pareto_All_Batches.tex', 'w') as f:
         f.write(latex_table)
         
 if __name__ == "__main__":

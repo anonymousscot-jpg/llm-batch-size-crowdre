@@ -4,7 +4,7 @@ Replication package for the paper:
 
 > **How Many Requirements Should an LLM Classify at Once? A Cost and Accuracy Study of Batch Size for CrowdRE Sector Classification**
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/1270908885.svg)](https://doi.org/10.5281/zenodo.20713661)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 This repository contains the code, datasets, and aggregated results needed to reproduce the study. The full raw artifacts (per-batch model responses, detailed JSON logs, and run checkpoints) are large and are archived separately on Zenodo (see [Large Artifacts](#large-artifacts)).
@@ -67,7 +67,7 @@ llm-batch-size-crowdre/
 Requires Python 3.10 or newer.
 
 ```bash
-git clone https://github.com/<your-username>/llm-batch-size-crowdre.git
+git clone https://github.com/anonymousscot-jpg/llm-batch-size-crowdre.git
 cd llm-batch-size-crowdre
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
@@ -136,7 +136,7 @@ The complete raw outputs are too large for this repository and are archived on Z
 - Run checkpoints
 - The full set of generated figures and exported reports
 
-**Zenodo archive:** https://doi.org/10.5281/zenodo.XXXXXXX
+**Zenodo archive:** https://doi.org/10.5281/zenodo.20713661
 
 ---
 

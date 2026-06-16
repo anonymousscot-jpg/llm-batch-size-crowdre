@@ -11,8 +11,11 @@ from pathlib import Path
 sns.set_theme(style="whitegrid")
 
 # Configuration
-BASE_DIR = Path('/Users/SONY/Documents/College/Study_pdeu/Sem_8/Expriment/Batch')
-OUTPUT_DIR = BASE_DIR / 'Analysis_Graphs'
+# Repo root is two levels up from scripts/analysis/. Results are read from
+# results/; generated figures are written to analysis_output/.
+BASE_DIR = Path(__file__).resolve().parents[2]
+RESULTS_DIR = BASE_DIR / 'results'
+OUTPUT_DIR = BASE_DIR / 'analysis_output'
 OUTPUT_DIR.mkdir(exist_ok=True)
 
 MODEL_DIRS = {
@@ -41,7 +44,7 @@ def load_data():
     results = []
     for model_name, path_parts in MODEL_DIRS.items():
         display_name = DISPLAY_NAME_MAP.get(model_name, model_name)
-        model_path = BASE_DIR / path_parts[0] / path_parts[1]
+        model_path = RESULTS_DIR / path_parts[1]
         if not model_path.exists():
             print(f"Warning: Model directory missing for {model_name}: {model_path}")
             continue
@@ -789,7 +792,7 @@ def best_batch_analysis(df: pd.DataFrame):
 def generate_radar_charts():
     print("\nGenerating radar charts from detailed logs...")
     for model_name, path_parts in MODEL_DIRS.items():
-        model_path = BASE_DIR / path_parts[0] / path_parts[1]
+        model_path = RESULTS_DIR / path_parts[1]
         if not model_path.exists(): continue
         
         for task_dir in [d for d in model_path.iterdir() if d.is_dir()]:

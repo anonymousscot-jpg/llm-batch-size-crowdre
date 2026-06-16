@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 from pathlib import Path
 
-BASE=Path('/Users/SONY/Documents/College/Study_pdeu/Sem_8/Expriment/Batch')
+BASE=Path(__file__).resolve().parents[2]
+RESULTS=BASE/'results'
 DIRS={'DeepSeek-V3.2':['DeepSeek','deepseek-v3.2-cloud-batch'],
       'Gemma-4-31B':['Gemma','gemma4-31b-cloud-batch'],
       'Llama-4-Maverick':['Nvidia','meta-llama-4-maverick-17b-batch'],
@@ -19,7 +20,7 @@ BATCHES=[1,2,4,8,16,32,64]
 MODES=[('ezs','EZS prompt'),('avg','Average of both prompts')]
 
 def load(model,task,mode):
-    p=BASE/DIRS[model][0]/DIRS[model][1]/task/'batch_summary_aggregated.csv'
+    p=RESULTS/DIRS[model][1]/task/'batch_summary_aggregated.csv'
     d=pd.read_csv(p)
     if mode=='ezs':
         d=d[d['Prompt']=='Enhanced_Zero_Shot']
@@ -57,6 +58,7 @@ style_handles=[Line2D([0],[0],color='black',lw=2,ls='-',label='Macro $F_1$ (soli
 fig.legend(handles=model_handles+style_handles,loc='upper center',ncol=4,
            bbox_to_anchor=(0.5,1.07),fontsize=10,frameon=False)
 fig.tight_layout(rect=[0,0,1,0.97])
-out=BASE/'Analysis_Graphs'/'Global_Averages'/'DualAxis_F1_Tokens_Trends.png'
+out=BASE/'analysis_output'/'Global_Averages'/'DualAxis_F1_Tokens_Trends.png'
+out.parent.mkdir(parents=True, exist_ok=True)
 fig.savefig(out,dpi=300,bbox_inches='tight')
 print('saved',out)

@@ -14,7 +14,8 @@ Prints a clear summary table and flags any mismatches.
 import pandas as pd
 from pathlib import Path
 
-BASE_DIR = Path('/Users/SONY/Documents/College/Study_pdeu/Sem_8/Expriment/Batch')
+BASE_DIR = Path(__file__).resolve().parents[2]
+RESULTS_DIR = BASE_DIR / 'results'
 
 MODEL_DIRS = {
     'DeepSeek':             ['DeepSeek', 'deepseek-v3.2-cloud-batch'],
@@ -30,7 +31,7 @@ SEP = "=" * 100
 records = []
 
 for model_name, path_parts in MODEL_DIRS.items():
-    model_path = BASE_DIR / path_parts[0] / path_parts[1]
+    model_path = RESULTS_DIR / path_parts[1]
     if not model_path.exists():
         print(f"[MISSING DIR] {model_name}: {model_path}")
         continue

@@ -5,7 +5,8 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from pathlib import Path
 
-BASE_DIR = Path('/Users/SONY/Documents/College/Study_pdeu/Sem_8/Expriment/Batch')
+BASE_DIR = Path(__file__).resolve().parents[2]
+RESULTS_DIR = BASE_DIR / 'results'
 
 MODEL_DIRS = {
     'DeepSeek': ['DeepSeek', 'deepseek-v3.2-cloud-batch'],
@@ -39,14 +40,14 @@ DEFAULT_MODELS = [
 
 TARGET_TASKS = ['Quaternary_Easy', 'Quinary']
 TASK_DISPLAY_MAP = {'Quaternary_Easy': 'Quaternary', 'Quinary': 'Quinary'}
-OUTPUT_DIR = BASE_DIR / 'Analysis_Graphs' / 'Global_Averages'
+OUTPUT_DIR = BASE_DIR / 'analysis_output' / 'Global_Averages'
 
 
 def load_data():
     results = []
     for model_name, path_parts in MODEL_DIRS.items():
         display_name = DISPLAY_NAME_MAP.get(model_name, model_name)
-        model_path = BASE_DIR / path_parts[0] / path_parts[1]
+        model_path = RESULTS_DIR / path_parts[1]
         if not model_path.exists():
             continue
         for task_dir in [d for d in model_path.iterdir() if d.is_dir()]:

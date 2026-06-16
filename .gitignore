@@ -26,3 +26,6 @@ api_keys*.json
 *.log
 *.out
 exported_pdfs/
+
+# Regenerated analysis figures/tables
+analysis_output/
