@@ -1,0 +1,15 @@
+Batch Size,Prompt,Avg Macro F1,Std Macro F1,Avg Precision,Avg Recall,Avg Tokens/Req,Avg Failure Rate,Avg Accuracy,Avg Time (s)
+1,Enhanced_Zero_Shot,0.8509,,0.8736,0.849,727.6,0.0052,0.849,20621.07
+1,Few_Shot_with_Reasoning,0.8562,,0.8773,0.8542,1252.29,0.0078,0.8542,26090.43
+2,Enhanced_Zero_Shot,0.8582,,0.8707,0.8594,478.43,0.0,0.8594,11604.78
+2,Few_Shot_with_Reasoning,0.8637,,0.8771,0.8646,806.15,0.0,0.8646,21110.2
+4,Enhanced_Zero_Shot,0.8619,,0.8747,0.862,384.83,0.0,0.862,4268.05
+4,Few_Shot_with_Reasoning,0.8684,,0.8939,0.8594,553.99,0.0208,0.8594,5898.31
+8,Enhanced_Zero_Shot,0.8768,,0.8851,0.8776,272.46,0.0,0.8776,3026.1
+8,Few_Shot_with_Reasoning,0.8787,,0.892,0.8802,405.6,0.0,0.8802,4341.73
+16,Enhanced_Zero_Shot,0.8796,,0.8831,0.8802,218.43,0.0,0.8802,1924.9
+16,Few_Shot_with_Reasoning,0.8844,,0.89,0.8854,286.21,0.0,0.8854,3033.09
+32,Enhanced_Zero_Shot,0.8688,,0.8745,0.8698,157.81,0.0,0.8698,1169.72
+32,Few_Shot_with_Reasoning,0.8871,,0.8919,0.888,198.61,0.0,0.888,1832.07
+64,Enhanced_Zero_Shot,0.8767,,0.8812,0.8776,127.63,0.0,0.8776,1043.18
+64,Few_Shot_with_Reasoning,0.8796,,0.8863,0.8802,136.85,0.0,0.8802,1174.2

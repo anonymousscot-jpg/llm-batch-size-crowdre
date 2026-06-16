@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Secrets / API keys
+.env
+*.key
+api_keys*.json
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Large raw artifacts (archived on Zenodo, not tracked in git)
+**/batch_detailed_log.json
+**/checkpoint_*.json
+*.ipynb_checkpoints/
+
+# Build / export outputs
+*.aux
+*.log
+*.out
+exported_pdfs/

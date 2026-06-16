@@ -1,0 +1,14 @@
+# Core data and analysis
+pandas>=2.0
+numpy>=1.24
+scipy>=1.10
+
+# Plotting
+matplotlib>=3.7
+seaborn>=0.12
+plotly>=5.18
+kaleido>=0.2.1        # static (PNG) export for plotly figures
+
+# Model API clients (only needed to re-run the experiments)
+openai>=1.0
+requests>=2.31
