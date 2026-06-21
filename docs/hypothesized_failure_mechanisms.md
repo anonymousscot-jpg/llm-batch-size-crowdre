@@ -47,8 +47,10 @@ the wrong item count, or has mismatched identifiers after three retries.
 
 **Observation.** Mixtral-8x22B, the smallest Mixture-of-Experts (MoE) model, is
 the only model with a non-trivial failure rate at large batches. The other four
-models, including the much larger MoE model DeepSeek-V3.2, stay at or near 0%.
-Parameter count therefore does not predict batch resilience in this pool.
+models, including the two larger MoE models Llama-4-Maverick and DeepSeek-V3.2,
+stay at or near 0%. Neither parameter count nor architecture predicts batch
+resilience in this pool: two of the three MoE models are robust, and the lone
+fragile model is the smallest MoE.
 
 ### 2.2 Mixtral failure detail (by task and prompt)
 
@@ -111,8 +113,8 @@ through a learned gating function [Shazeer et al., 2017]. A single prompt that
 mixes many unrelated topics may force frequent switching among experts, which
 could dilute their specialisation. The disproportionate collapse of the smallest
 MoE model, Mixtral [Jiang et al., 2024] (Section 2.1), is **consistent with, but
-not proof of**, this mechanism; the larger MoE model DeepSeek-V3.2 does not show
-the same fragility, so any such effect is not a simple function of the MoE
+not proof of**, this mechanism; the two larger MoE models, Llama-4-Maverick and
+DeepSeek-V3.2, do not show the same fragility, so any such effect is not a simple function of the MoE
 architecture alone.
 
 ---
