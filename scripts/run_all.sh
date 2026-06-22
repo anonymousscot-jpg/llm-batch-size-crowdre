@@ -51,5 +51,7 @@ echo
 echo "All runs complete. Now regenerate the tables and figures:"
 echo "  python analysis/analyze.py"
 echo "  python analysis/plot_u_shape_and_pareto.py"
+echo "  python analysis/plot_failure_rate.py"
+echo "  python analysis/plot_think_comparison.py"
 echo "  python analysis/pareto_all_batches_4_5.py"
 echo "  python analysis/make_dualaxis_fig.py"

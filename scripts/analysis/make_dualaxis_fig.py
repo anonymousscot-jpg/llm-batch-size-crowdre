@@ -21,7 +21,8 @@ BATCHES = [1, 2, 4, 8, 16, 32, 64]
 #                with the Mixtral outlier removed, to expose the general trend.
 #   Bottom row : kept per model -> five lines per task.
 ALL5_F1 = '#000000'
-NOMIX_F1 = '#1f77b4'
+# Purple (distinct from DeepSeek's blue in the per-model bottom row).
+NOMIX_F1 = '#9467bd'
 OVERALL_TOK = '#888888'
 
 

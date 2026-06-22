@@ -43,8 +43,11 @@ llm-batch-size-crowdre/
 │   └── analysis/           # aggregation, tables, and figures
 │       ├── analyze.py
 │       ├── plot_u_shape_and_pareto.py
+│       ├── plot_failure_rate.py
+│       ├── plot_think_comparison.py
 │       ├── pareto_all_batches_4_5.py
 │       ├── make_dualaxis_fig.py
+│       ├── quinary_confusion.py
 │       └── timecheck.py
 ├── data/                   # the input requirement datasets, one CSV per task
 │   ├── Quaternary/
@@ -59,6 +62,7 @@ llm-batch-size-crowdre/
 
 - `batch_summary_aggregated.csv` holds, for each batch size and prompt, the Macro F1, precision, recall, accuracy, tokens per requirement, failure rate, and execution time.
 - `batch_results.csv` holds the per-run records used to build the aggregates.
+- `results/Quinary_confusion_pooled.csv` holds the pooled Quinary confusion matrix (true vs predicted class counts per batch size, summed over the five default models and both prompts). It backs the "Other"-sink numbers in the paper's RQ2 (predicted-Other counts, "Other" precision and recall, and the share of errors assigned to "Other"); regenerate it with `quinary_confusion.py`.
 
 ---
 
@@ -114,9 +118,12 @@ The analysis scripts read only the CSVs already provided in `results/`:
 
 ```bash
 python scripts/analysis/analyze.py                 # heatmaps, per-task plots, summary tables
-python scripts/analysis/plot_u_shape_and_pareto.py # U-shape, 3D Pareto, failure-rate, Think ON/OFF
+python scripts/analysis/plot_u_shape_and_pareto.py # U-shape, 3D Pareto
+python scripts/analysis/plot_failure_rate.py       # structural failure rate by prompt (matplotlib)
+python scripts/analysis/plot_think_comparison.py   # Think ON vs OFF, F1 vs batch size (matplotlib)
 python scripts/analysis/pareto_all_batches_4_5.py  # 3D efficiency-score Pareto table (LaTeX)
 python scripts/analysis/make_dualaxis_fig.py       # dual-axis F1 vs token-cost trends
+python scripts/analysis/quinary_confusion.py       # pooled Quinary confusion matrix + RQ2 Other-sink stats (needs detailed logs)
 ```
 
 ---
