@@ -49,12 +49,7 @@ DELAY_BETWEEN_REQUESTS = 0.3
 # TASKS — each maps to a dataset file and its label set.
 # =============================================================================
 TASKS = {
-    "Binary_Easy":     ("Binary_Easy/binary_easy_320.csv",         ["Energy", "Safety"]),
-    "Binary_Hard":     ("Binary_Hard/binary_hard_320.csv",         ["Health", "Other"]),
-    "Tertiary_Easy":   ("Tertiary_Easy/tertiary_easy_384.csv",     ["Energy", "Entertainment", "Safety"]),
-    "Tertiary_Hard":   ("Tertiary_Hard/tertiary_hard_384.csv",     ["Energy", "Health", "Other"]),
     "Quaternary_Easy": ("Quaternary_Easy/quaternary_easy_320.csv", ["Energy", "Entertainment", "Health", "Safety"]),
-    "Quaternary_Hard": ("Quaternary_Hard/quaternary_hard_320.csv", ["Entertainment", "Health", "Other", "Safety"]),
     "Quinary":         ("Quinary_Batch/quinary_batch_320.csv",     ["Energy", "Entertainment", "Health", "Other", "Safety"]),
 }
 

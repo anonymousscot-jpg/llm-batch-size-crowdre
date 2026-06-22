@@ -104,7 +104,6 @@ To reproduce the **entire study** (all models, both target tasks), use the guide
 ```bash
 cd scripts
 bash run_all.sh                # the two target tasks
-bash run_all.sh --all-tasks    # all seven tasks
 ```
 
 The runner sweeps batch sizes `1 2 4 8 16 32 64` and both prompts, validates every response (valid JSON, exact item count, exact IDs, up to three retries), and writes results into `results/<model>/<task>/`. Inference settings are fixed (temperature 1.0, top-p 0.95) and the output token budget scales with the batch size as `max_tokens = 4096 + 180 * batch_size`. Useful flags: `--prompts`, `--batch-sizes`, `--reps`, `--out`, `--dry-run`.

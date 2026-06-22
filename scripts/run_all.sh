@@ -16,7 +16,6 @@
 #
 # USAGE
 #   bash run_all.sh              # the two target tasks from the paper
-#   bash run_all.sh --all-tasks  # all seven tasks
 #
 set -euo pipefail
 cd "$(dirname "$0")"
@@ -32,12 +31,8 @@ MODELS=(
   "deepseek-v3.2"
 )
 
-# The two tasks analyzed in the paper (use --all-tasks for the full set of seven).
-if [[ "${1:-}" == "--all-tasks" ]]; then
-  TASKS=(Binary_Easy Binary_Hard Tertiary_Easy Tertiary_Hard Quaternary_Easy Quaternary_Hard Quinary)
-else
-  TASKS=(Quaternary_Easy Quinary)
-fi
+# The two tasks analyzed in the paper.
+TASKS=(Quaternary_Easy Quinary)
 
 echo "Models: ${MODELS[*]}"
 echo "Tasks:  ${TASKS[*]}"
