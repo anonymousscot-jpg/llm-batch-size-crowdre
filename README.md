@@ -25,7 +25,7 @@ Five open-source model configurations are evaluated across seven batch sizes (1 
 | Gemma-4-31B | Tiny | Dense |
 | Mixtral-8x22B | Small | MoE |
 | Nemotron-Ultra-253B | Medium | Dense |
-| Llama-4-Maverick | Large | Dense |
+| Llama-4-Maverick | Large | MoE |
 | DeepSeek-V3.2 | Ultra | MoE |
 
 ---
@@ -47,7 +47,7 @@ llm-batch-size-crowdre/
 │       ├── make_dualaxis_fig.py
 │       └── timecheck.py
 ├── data/                   # the input requirement datasets, one CSV per task
-│   ├── Quaternary_Easy/
+│   ├── Quaternary/
 │   ├── Quinary_Batch/
 │   └── ...
 ├── results/                # aggregated outcomes per model and task (CSV)
@@ -96,7 +96,7 @@ List the available configurations, then run one:
 cd scripts
 python run_experiment.py --list
 python run_experiment.py --model gemma-4-31b --task Quinary --dry-run   # quick smoke test (batch size 1)
-python run_experiment.py --model llama-4-maverick --task Quaternary_Easy
+python run_experiment.py --model llama-4-maverick --task Quaternary
 ```
 
 To reproduce the **entire study** (all models, both target tasks), use the guide script:

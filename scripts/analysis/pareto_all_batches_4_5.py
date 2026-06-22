@@ -65,7 +65,7 @@ def is_pareto_efficient(costs):
 
 def analyze_all_batches():
     df = load_data()
-    target_tasks = ['Quaternary_Easy', 'Quinary']
+    target_tasks = ['Quaternary', 'Quinary']
     default_models = [
         'DeepSeek-V3.2',
         'Gemma-4-31B (Think OFF)',

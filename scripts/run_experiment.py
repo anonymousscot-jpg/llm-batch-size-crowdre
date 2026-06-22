@@ -14,7 +14,7 @@ No API keys are hardcoded. Provide them via environment variables:
 
 Examples
   python run_experiment.py --list
-  python run_experiment.py --model llama-4-maverick --task Quaternary_Easy
+  python run_experiment.py --model llama-4-maverick --task Quaternary
   python run_experiment.py --model gemma-4-31b --task Quinary --dry-run
 """
 import os
@@ -49,7 +49,7 @@ DELAY_BETWEEN_REQUESTS = 0.3
 # TASKS — each maps to a dataset file and its label set.
 # =============================================================================
 TASKS = {
-    "Quaternary_Easy": ("Quaternary_Easy/quaternary_easy_320.csv", ["Energy", "Entertainment", "Health", "Safety"]),
+    "Quaternary": ("Quaternary/quaternary_320.csv", ["Energy", "Entertainment", "Health", "Safety"]),
     "Quinary":         ("Quinary_Batch/quinary_batch_320.csv",     ["Energy", "Entertainment", "Health", "Other", "Safety"]),
 }
 

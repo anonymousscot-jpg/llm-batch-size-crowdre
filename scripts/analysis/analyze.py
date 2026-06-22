@@ -895,13 +895,13 @@ def main():
         return
 
     # Scope the analysis to the two target tasks for the focused report.
-    TARGET_TASKS = ['Quaternary_Easy', 'Quinary']
+    TARGET_TASKS = ['Quaternary', 'Quinary']
     df = df[df['Task'].isin(TARGET_TASKS)].copy()
     if df.empty:
-        print("❌ No data for the target tasks (Quaternary_Easy, Quinary).")
+        print("❌ No data for the target tasks (Quaternary, Quinary).")
         return
     # Display label: drop the "Easy" suffix for the report.
-    df['Task'] = df['Task'].replace({'Quaternary_Easy': 'Quaternary'})
+    df['Task'] = df['Task'].replace({'Quaternary': 'Quaternary'})
 
     # Think OFF is the default consumer configuration. The main report figures
     # use these five models; the Think ON variants are analyzed separately in RQ5.

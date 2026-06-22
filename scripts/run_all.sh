@@ -32,7 +32,7 @@ MODELS=(
 )
 
 # The two tasks analyzed in the paper.
-TASKS=(Quaternary_Easy Quinary)
+TASKS=(Quaternary Quinary)
 
 echo "Models: ${MODELS[*]}"
 echo "Tasks:  ${TASKS[*]}"

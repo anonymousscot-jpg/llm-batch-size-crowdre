@@ -13,7 +13,7 @@ DIRS = {'DeepSeek-V3.2': ['DeepSeek', 'deepseek-v3.2-cloud-batch'],
 ORDER = ['Gemma-4-31B', 'Mixtral-8x22B', 'Nemotron-Ultra-253B', 'Llama-4-Maverick', 'DeepSeek-V3.2']
 COLORS = {'Gemma-4-31B': '#2ca02c', 'Mixtral-8x22B': '#ff7f0e', 'Nemotron-Ultra-253B': '#17becf',
           'Llama-4-Maverick': '#d62728', 'DeepSeek-V3.2': '#1f77b4'}
-TASKS = [('Quaternary_Easy', 'Quaternary'), ('Quinary', 'Quinary')]
+TASKS = [('Quaternary', 'Quaternary'), ('Quinary', 'Quinary')]
 BATCHES = [1, 2, 4, 8, 16, 32, 64]
 
 # Both rows average over BOTH prompts (never a single prompt).

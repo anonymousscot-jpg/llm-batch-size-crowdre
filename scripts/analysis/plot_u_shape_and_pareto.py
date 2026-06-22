@@ -38,8 +38,8 @@ DEFAULT_MODELS = [
     'Nemotron-Ultra-253B (Think OFF)',
 ]
 
-TARGET_TASKS = ['Quaternary_Easy', 'Quinary']
-TASK_DISPLAY_MAP = {'Quaternary_Easy': 'Quaternary', 'Quinary': 'Quinary'}
+TARGET_TASKS = ['Quaternary', 'Quinary']
+TASK_DISPLAY_MAP = {'Quaternary': 'Quaternary', 'Quinary': 'Quinary'}
 OUTPUT_DIR = BASE_DIR / 'analysis_output' / 'Global_Averages'
 
 
