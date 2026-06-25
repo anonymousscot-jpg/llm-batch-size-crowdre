@@ -48,6 +48,7 @@ llm-batch-size-crowdre/
 │       ├── pareto_all_batches_4_5.py
 │       ├── make_dualaxis_fig.py
 │       ├── quinary_confusion.py
+│       ├── failure_summary.py
 │       └── timecheck.py
 ├── data/                   # the input requirement datasets, one CSV per task
 │   ├── Quaternary/
@@ -124,6 +125,7 @@ python scripts/analysis/plot_think_comparison.py   # Think ON vs OFF, F1 vs batc
 python scripts/analysis/pareto_all_batches_4_5.py  # 3D efficiency-score Pareto table (LaTeX)
 python scripts/analysis/make_dualaxis_fig.py       # dual-axis F1 vs token-cost trends
 python scripts/analysis/quinary_confusion.py       # pooled Quinary confusion matrix + RQ2 Other-sink stats (needs detailed logs)
+python scripts/analysis/failure_summary.py         # structural failure counts/rates (RQ4 pooled rate, Section 5 distribution)
 ```
 
 ---
