@@ -2,7 +2,7 @@
 
 Replication package for the paper:
 
-> **How Many Requirements Should an LLM Classify at Once? A Cost and Accuracy Study of Batch Size for CrowdRE Sector Classification**
+> **Finding the Sweet Spot: Optimizing Batch Size for Accurate and Cost-Efficient LLM-Based Crowd Requirements Classification**
 
 [![DOI](https://zenodo.org/badge/1270908885.svg)](https://doi.org/10.5281/zenodo.20713661)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -156,7 +156,7 @@ If you use this artifact, please cite the paper:
 
 ```bibtex
 @inproceedings{batchsize2027,
-  title     = {How Many Requirements Should an LLM Classify at Once? A Cost and Accuracy Study of Batch Size for CrowdRE Sector Classification},
+  title     = {Finding the Sweet Spot: Optimizing Batch Size for Accurate and Cost-Efficient LLM-Based Crowd Requirements Classification},
   booktitle = {Proceedings of the 18th Innovations in Software Engineering Conference (ISEC)},
   year      = {2027}
 }
