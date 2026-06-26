@@ -157,7 +157,7 @@ If you use this artifact, please cite the paper:
 ```bibtex
 @inproceedings{batchsize2027,
   title     = {Finding the Sweet Spot: Optimizing Batch Size for Accurate and Cost-Efficient LLM-Based Crowd Requirements Classification},
-  booktitle = {Proceedings of the 18th Innovations in Software Engineering Conference (ISEC)},
+  booktitle = {Proceedings of the 20th Innovations in Software Engineering Conference (ISEC)},
   year      = {2027}
 }
 ```
