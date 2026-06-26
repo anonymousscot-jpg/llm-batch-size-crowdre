@@ -133,6 +133,6 @@ if __name__ == '__main__':
     else:
         # Main report figures use the Think OFF default model set.
         plot_u_shape(df, DEFAULT_MODELS, 'U_Shape_F1_Curve', 'Macro F1 vs Batch Size (Quaternary and Quinary)')
-        plot_pareto(df, DEFAULT_MODELS, 'Interactive_3D_Pareto_QuaternaryEasy_Quinary')
-        # Failure_Rate_by_Batch and Think_OnOff_Comparison are produced separately by
-        # plot_failure_rate.py and plot_think_comparison.py (both matplotlib).
+        # Interactive_3D_Pareto, Failure_Rate_by_Batch, and Think_OnOff_Comparison are
+        # produced separately by plot_pareto3d.py, plot_failure_rate.py, and
+        # plot_think_comparison.py (all matplotlib).

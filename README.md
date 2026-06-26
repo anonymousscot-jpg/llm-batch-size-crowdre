@@ -43,6 +43,7 @@ llm-batch-size-crowdre/
 │   └── analysis/           # aggregation, tables, and figures
 │       ├── analyze.py
 │       ├── plot_u_shape_and_pareto.py
+│       ├── plot_pareto3d.py
 │       ├── plot_failure_rate.py
 │       ├── plot_think_comparison.py
 │       ├── pareto_all_batches_4_5.py
@@ -119,7 +120,8 @@ The analysis scripts read only the CSVs already provided in `results/`:
 
 ```bash
 python scripts/analysis/analyze.py                 # heatmaps, per-task plots, summary tables
-python scripts/analysis/plot_u_shape_and_pareto.py # U-shape, 3D Pareto
+python scripts/analysis/plot_u_shape_and_pareto.py # U-shape curve
+python scripts/analysis/plot_pareto3d.py           # 3D three-objective trade-off scatter (matplotlib)
 python scripts/analysis/plot_failure_rate.py       # structural failure rate by prompt (matplotlib)
 python scripts/analysis/plot_think_comparison.py   # Think ON vs OFF, F1 vs batch size (matplotlib)
 python scripts/analysis/pareto_all_batches_4_5.py  # 3D efficiency-score Pareto table (LaTeX)

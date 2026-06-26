@@ -49,7 +49,7 @@ def load():
 def main():
     pivot = load()
     sns.set_theme(style='whitegrid')
-    fig, ax = plt.subplots(figsize=(9, 5.4))
+    fig, ax = plt.subplots(figsize=(8.6, 6.2))
     x = np.arange(len(BATCHES))
 
     for prompt in (EZS, FSR):
