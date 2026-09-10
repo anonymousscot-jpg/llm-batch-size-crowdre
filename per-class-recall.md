@@ -45,6 +45,52 @@ From the pooled prediction counts over both prompts
 | Share of all misclassifications falling into `Other` | 56% | 61% |
 | Precision of `Other` | 0.44 | 0.42 |
 
+## Derivation of the RQ2 claims
+
+Source: `results/Quinary_confusion_pooled.csv`, Quinary task, pooled over
+5 models × 2 prompts × 320 items = **3,200 predictions per batch size**.
+
+| Quantity | How it is computed | B=1 | B=64 | Change |
+| --- | --- | --- | --- | --- |
+| Total predictions | 5 models × 2 prompts × 320 | 3,200 | 3,200 | 0 |
+| Correct | sum of confusion diagonal | 2,265 | 2,156 | −109 |
+| Invalid / unparseable | `Pred (invalid)` column | 2 | 93 | +91 |
+| Total misclassifications | total − correct | 935 | 1,044 | +109 |
+| Predicted `Other` | `Pred Other` column sum | 940 | 1,090 | +16.0% |
+| &nbsp;&nbsp;of which correct | True `Other` → Pred `Other` | 412 | 453 | +41 |
+| &nbsp;&nbsp;of which wrong | 940−412, 1090−453 | 528 | 637 | +109 |
+| Precision of `Other` | 412/940, 453/1090 | 0.438 | 0.416 | 0.44 → 0.42 |
+| Share of misclassifications into `Other` | 528/935, 637/1044 | 56.5% | 61.0% | 56% → 61% |
+
+### Where the extra `Other` predictions come from
+
+| True class | B=1 | B=64 | Change |
+| --- | --- | --- | --- |
+| Health | 201 | 241 | +40 |
+| Entertainment | 162 | 200 | +38 |
+| Energy | 92 | 125 | +33 |
+| Safety | 73 | 71 | −2 |
+| `Other` (correct) | 412 | 453 | +41 |
+| **Total** | **940** | **1,090** | **+150** |
+
+### Reconciliation
+
+The three error components account exactly for the change in total misclassifications:
+
+| Component | B=1 | B=64 | Change |
+| --- | --- | --- | --- |
+| Invalid / unparseable | 2 | 93 | +91 |
+| Wrong, predicted `Other` | 528 | 637 | +109 |
+| Wrong, predicted some other specific class | 405 | 314 | −91 |
+| **Total misclassifications** | **935** | **1,044** | **+109** |
+
+Two distinct effects are visible here. The **+91 invalid predictions** are the structural
+failure mode analysed under RQ4 — whole batches lost to unparseable output, which the
+zero-tolerance policy scores as entirely incorrect. Separately, errors that previously landed
+on a wrong *specific* sector (−91) migrate into the catch-all, while `Other` absorbs +109 more
+wrong predictions overall. The `Other` class therefore grows both by attracting new errors and
+by displacing them from the specific sectors, without becoming any more precise (0.44 → 0.42).
+
 ## Interpretation
 
 Larger batches redistribute predictions from the specific sectors into a low-precision
